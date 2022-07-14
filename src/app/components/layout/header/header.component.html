@@ -1,0 +1,28 @@
+
+<h1>{{title}}</h1>
+
+<div class="cards">
+
+  <div *ngFor="let card of cardInfo" >
+    <div class="card" style="width: 18rem;">
+      <img
+       class="card-img-top"
+       src="{{card.imgUrl}}"
+       alt="{{card.title}}">
+      <div class="card-body">
+          <h5 class="card-title">{{card.title}}</h5>
+          <p class="card-text">
+            {{card.cardBody}}
+          </p>
+          <a href="#" class="btn btn-primary">{{cardInfo.cardTextButton}}</a>
+        </div>
+      </div>
+     </div> 
+
+
+
+</div>
+
+
+
+<button (click)="onChange()">hace click</button>  
