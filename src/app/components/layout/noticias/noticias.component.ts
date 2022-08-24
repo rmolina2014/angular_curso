@@ -17,19 +17,16 @@ export class NoticiasComponent implements OnInit {
     this.getNoticias();
     console.log('llamda al servicio');
 
-
   }
 
   getNoticias(){
     this._noticias.getNoticias().subscribe({
       next:(data:any)=>{
         console.log(data);
-        this.lista=data;
-
+        this.lista=data.articles;
       },
       error:(err)=>{console.log(err)},
       complete:()=>{console.log('petion termino---')}
     })
   }
-
 }
