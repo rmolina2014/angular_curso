@@ -15,7 +15,7 @@ export class NoticiasComponent implements OnInit {
   ngOnInit(): void {
 
     this.getNoticias();
-    console.log('llamda al servicio');
+    console.log('llamar al servicio...');
 
   }
 
@@ -26,7 +26,7 @@ export class NoticiasComponent implements OnInit {
         this.lista=data.articles;
       },
       error:(err)=>{console.log(err)},
-      complete:()=>{console.log('petion termino---')}
+      complete:()=>{console.log('fin de la peticion....')}
     })
   }
 }
