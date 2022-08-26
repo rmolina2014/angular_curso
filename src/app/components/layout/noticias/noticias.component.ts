@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+
 import { NoticiasService } from 'src/app/services/noticias.service';
 
 @Component({
@@ -8,14 +9,22 @@ import { NoticiasService } from 'src/app/services/noticias.service';
 })
 export class NoticiasComponent implements OnInit {
 
+  //prueba boton
+  e:any;
+
+  save(e: any){console.log(e);}
+
+// fin prueba boton
+
   lista:any[]=[];
 
   constructor(private _noticias:NoticiasService) {}
+ 
 
   ngOnInit(): void {
 
     this.getNoticias();
-    console.log('llamar al servicio...');
+    console.log('Llamar al servicio...');
 
   }
 
@@ -26,7 +35,7 @@ export class NoticiasComponent implements OnInit {
         this.lista=data.articles;
       },
       error:(err)=>{console.log(err)},
-      complete:()=>{console.log('fin de la peticion....')}
+      complete:()=>{console.log('Fin de la peticion....')}
     })
   }
 }
