@@ -55,7 +55,9 @@
   </div>
 </main-->
 
-
+<div class="alert alert-danger" role="alert" *ngIf="lista">
+  Se superó el límite de consultas al Servicio de Noticias.
+</div>
 
 
 <div class="row" *ngFor="let card of lista" >
