@@ -18,6 +18,8 @@ export class NoticiasService {
   baseURL:string='https://gnews.io/api/v4/search?q=example';
   appID:string='c48648af5e4a0df9f9920833b871a1e8';
 
+  baseURLpais:string='https://gnews.io/api/v4/top-headlines?country=pe';
+
   constructor(
     private _http: HttpClient
   ) {   }
@@ -26,5 +28,14 @@ export class NoticiasService {
     let params=new HttpParams().set('token',this.appID);
  
     return this._http.get(this.baseURL,{params:params})
+  }
+
+  getNoticiasPaisServicio(pais:any):Observable<any>{
+    //let params=new HttpParams().set('token',this.appID);
+
+    const URL=`https://gnews.io/api/v4/top-headlines?country=${pais}&token=c48648af5e4a0df9f9920833b871a1e8`;
+ 
+   // return this._http.get(this.baseURLpais,{params:params})
+   return this._http.get(URL);
   }
 }

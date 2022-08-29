@@ -12,7 +12,20 @@ export class NoticiasComponent implements OnInit {
   //prueba boton
   e:any;
 
-  save(e: any){console.log(e);}
+ 
+
+  getNoticiasPais(e: any,p:any){
+
+       
+    this._noticias.getNoticiasPaisServicio(p).subscribe({
+      next:(data:any)=>{
+        console.log(data);
+        this.lista=data.articles;
+      },
+      error:(err)=>{console.log(err)},
+      complete:()=>{console.log('Fin de la peticion....')}
+    })
+  }
 
 // fin prueba boton
 
@@ -23,7 +36,8 @@ export class NoticiasComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.getNoticias();
+  this.getNoticias();
+    //this.getNoticiasPeru();
     console.log('Llamar al servicio...');
 
   }
@@ -38,4 +52,7 @@ export class NoticiasComponent implements OnInit {
       complete:()=>{console.log('Fin de la peticion....')}
     })
   }
+
+  
+
 }
